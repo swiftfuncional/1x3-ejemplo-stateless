@@ -40,11 +40,11 @@ class UserDatabase {
     
     func activeUserNames() -> [String] {
         return users.filter { (user) -> Bool in
-            return user.active
+            user.active
         }.sorted { (user1, user2) -> Bool in
-            return user1.id < user2.id
+            user1.id < user2.id
         }.map { (user) -> String in
-            return user.name
+            user.name
         }
     }
 }
