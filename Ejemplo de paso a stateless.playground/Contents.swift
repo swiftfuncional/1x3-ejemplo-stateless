@@ -60,3 +60,9 @@ class UserDatabase {
         }
     }
 }
+
+let database = UserDatabase()
+
+database.storeActiveUserNames()
+
+print(database.activeUserNames)
