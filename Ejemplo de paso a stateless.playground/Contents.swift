@@ -39,4 +39,24 @@ class UserDatabase {
     ]
     
     var activeUserNames: [String] = []
+    
+    func storeActiveUserNames() {
+        var activeUsers = [User]()
+        
+        for user in users {
+            if user.active {
+                activeUsers.append(user)
+            }
+        }
+        
+        activeUsers.sort { (user1, user2) -> Bool in
+            return user1.id < user2.id
+        }
+        
+        activeUserNames.removeAll()
+        
+        for user in activeUsers {
+            activeUserNames.append(user.name)
+        }
+    }
 }
