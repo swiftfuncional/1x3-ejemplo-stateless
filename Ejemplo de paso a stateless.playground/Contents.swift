@@ -47,10 +47,8 @@ class UserDatabase {
             return user1.id < user2.id
         }
         
-        var activeUserNames = [String]()
-        
-        for user in activeUsers {
-            activeUserNames.append(user.name)
+        let activeUserNames = sortedUsers.map { (user) -> String in
+            return user.name
         }
         
         return activeUserNames
