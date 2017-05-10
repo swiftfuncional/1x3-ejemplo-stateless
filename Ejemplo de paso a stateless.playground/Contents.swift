@@ -43,7 +43,7 @@ class UserDatabase {
             return user.active
         }
         
-        activeUsers.sort { (user1, user2) -> Bool in
+        let sortedUsers = activeUsers.sorted { (user1, user2) -> Bool in
             return user1.id < user2.id
         }
         
