@@ -37,4 +37,6 @@ class UserDatabase {
         User(id: 29, name: "Arthur",     active: false),
         User(id: 30, name: "Stephen",    active: false)
     ]
+    
+    var activeUserNames: [String] = []
 }
