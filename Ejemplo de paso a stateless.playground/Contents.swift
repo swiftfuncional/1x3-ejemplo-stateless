@@ -38,9 +38,7 @@ class UserDatabase {
         User(id: 30, name: "Stephen",    active: false)
     ]
     
-    var activeUserNames: [String] = []
-    
-    func storeActiveUserNames() {
+    func activeUserNames() -> [String] {
         var activeUsers = [User]()
         
         for user in users {
@@ -53,16 +51,16 @@ class UserDatabase {
             return user1.id < user2.id
         }
         
-        activeUserNames.removeAll()
+        var activeUserNames = [String]()
         
         for user in activeUsers {
             activeUserNames.append(user.name)
         }
+        
+        return activeUserNames
     }
 }
 
 let database = UserDatabase()
 
-database.storeActiveUserNames()
-
-print(database.activeUserNames)
+print(database.activeUserNames())
