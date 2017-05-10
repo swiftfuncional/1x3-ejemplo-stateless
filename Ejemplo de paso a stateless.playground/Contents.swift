@@ -39,12 +39,8 @@ class UserDatabase {
     ]
     
     func activeUserNames() -> [String] {
-        var activeUsers = [User]()
-        
-        for user in users {
-            if user.active {
-                activeUsers.append(user)
-            }
+        let activeUsers = users.filter { (user) -> Bool in
+            return user.active
         }
         
         activeUsers.sort { (user1, user2) -> Bool in
