@@ -42,7 +42,7 @@ class UserDatabase {
         return users.filter {
             $0.active
         }.sorted {
-            $0.0.id < $0.1.id
+            $0.id < $1.id
         }.map {
             $0.name
         }
